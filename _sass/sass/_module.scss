@@ -1,0 +1,54 @@
+.container{
+    max-width: $contents_w;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $grid_padding;
+    padding-right: $grid_padding;
+}
+.row{
+    display: flex;
+    margin-left: -$grid_padding;
+    margin-right: -$grid_padding;
+}
+
+@for $i from 1 through $grid{
+    $grid_w: 100 / $grid * $i * 1%;
+
+    .grid_#{$i}{
+        width: $grid_w;
+        padding-left: $grid_padding;
+        padding-right: $grid_padding;
+    }
+    .grid_#{$i}_wrap{
+        padding-left: $grid_w;
+        padding-right: $grid_w;
+    }
+    .grid_#{$i}_pull{
+        margin-right: $grid_w;
+    }
+    .grid_#{$i}_push{
+        margin-left: $grid_w;
+    }
+}
+
+.en{
+    font-family: $en_f_family;
+}
+
+.lead{
+    line-height: $line_height;
+    letter-spacing: $letter_spacing;
+}
+.sentence{
+    line-height: $line_height;
+    letter-spacing: $letter_spacing;
+}
+
+.btn{
+    a{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}

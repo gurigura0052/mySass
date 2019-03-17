@@ -1,0 +1,43 @@
+$contents_w: 1000px;
+$grid: 12;
+$grid_padding: 10px;
+
+$f_family: 'Noto Sans JP', "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Arial", sans-serif;
+$en_f_family: 'Roboto', sans-serif;
+$color: #555;
+$f_size: 1.6rem;
+$line_height: 1.6;
+$letter_spacing: .2rem;
+
+$mq: (
+    'sp': 576px,
+    'tab': 768px,
+    'pc': 900px,
+);
+
+@mixin mqDown($breakpoint: tab) {
+    @media (max-width: #{map-get($mq, $breakpoint)}) { @content; }
+}
+@mixin mqUp($breakpoint: tab) {
+    @media (min-width: '#{map-get($mq, $breakpoint)} + 1') { @content; }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family:  $f_family;
+    font-size: $f_size;
+    color: $color;
+}
+img{
+    max-width: 100%;
+}
+ul{
+    list-style: none;;
+}
