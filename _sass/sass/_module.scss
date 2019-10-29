@@ -30,7 +30,10 @@
   .col_#{$i}_tab{
     padding-left: $grid_padding;
     padding-right: $grid_padding;
-    @include mqDoun(tab) {
+    @include mqUp(sp) {
+      width: $grid_w;
+    }
+    @include mqDoun(pc) {
       width: $grid_w;
     }
   }
