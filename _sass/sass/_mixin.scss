@@ -1,0 +1,36 @@
+$contents_w: 1200;
+$content_padding: 20;
+
+$sp: 375;
+$tab: 768;
+$pc: 1024;
+
+$f_ja: 'ヒラギノ角ゴシック','Hiragino Sans','メイリオ', Meiryo,sans-serif;
+$f_en: 'Roboto', sans-serif;
+
+$exLight: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+$extraBold:800;
+
+$color: #333;
+
+@mixin mqUp($bq: $tab) {
+  @media (min-width: #{$bq + 1}px) { @content; }
+}
+@mixin mqDown($bq: $tab) {
+  @media (max-width: #{$bq}px) { @content; }
+}
+@mixin mqUpDown($bq_u: $pc, $bq_d: $tab) {
+  @media (max-width: #{$bq_u}px) and (min-width: #{$bq_d + 1}px) { @content; }
+}
+
+@function vwSize($value) {
+	@return $value / $contents_w * 100vw;
+}
+@function vwSizeSp($value) {
+	@return $value / $sp * 100vw;
+}
